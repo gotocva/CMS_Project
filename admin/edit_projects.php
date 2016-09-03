@@ -34,6 +34,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	type='text/css' />
 <!-- Custom CSS -->
 <link href="includes/css/style.css" rel='stylesheet' type='text/css' />
+<link href="includes/css/custom.css" rel="stylesheet">
 <link href="includes/css/font-awesome.css" rel="stylesheet">
 <!-- jQuery -->
 <script src="includes/js/jquery.min.js"></script>
@@ -90,7 +91,7 @@ $(document).ready(function() {
 								<li><a href="exterior_view.php">View Exterior Projects</a></li>
 								<li><a href="remodeling_view.php">View Remodeling Project</a></li>
 							</ul></li>
-						<li><a href="testimonial.php"><i class="fa fa-indent nav_icon"></i>Testimonial</span></a>
+						<li><a href="testimonial.php"><i class="fa fa-indent nav_icon"></i>Testimonial</a>
 						</li>
 						<li><a href="change_password.php"><i class="fa fa-indent nav_icon"></i>Change
 								Password</a></li>
@@ -101,102 +102,99 @@ $(document).ready(function() {
 			</div>
 			<!-- /.navbar-static-side -->
 		</nav>
+	</div>
+	<div id="page-wrapper">
+		<div class="graphs">
+			<div class="xs">
 
-		<div id="page-wrapper">
-			<div class="graphs">
-				<div class="xs">
-					<center>
-						<h3>Edit Project</h3>
-					</center>
-					<div class="tab-content">
-						<div class="tab-pane active" id="horizontal-form">
-							<form class="form-horizontal" name="frm" action="" method="post"
-								enctype="multipart/form-data">
-								<div class="form-group">
-									<label for="focusedinput" class="col-sm-2 control-label">Title</label>
-									<div class="col-sm-8">
-										<input type="text" class="form-control1" name="title"
-											id="title" placeholder="<?php echo $rows['title']; ?>">
-									</div>
+				<h3>Edit Project</h3>
+
+				<div class="tab-content">
+					<div class="tab-pane active" id="horizontal-form">
+						<form class="form-horizontal" name="frm" action="" method="post"
+							enctype="multipart/form-data">
+							<div class="form-group">
+								<label for="focusedinput" class="col-sm-2 control-label">Title</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control1" name="title"
+										id="title" placeholder="<?php echo $rows['title']; ?>">
+								</div>
+
+							</div>
+
+							<div class="form-group">
+								<label for="focusedinput" class="col-sm-2 control-label">Title
+									Content</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control1" name="titlecontent"
+										id="titlecontent"
+										placeholder="<?php echo $rows['titlecontent']; ?>">
+								</div>
+
+							</div>
+
+							<div class="form-group">
+								<label for="focusedinput" class="col-sm-2 control-label">Services</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control1" name="services"
+										id="services" placeholder="<?php echo $rows['services']; ?>">
+								</div>
+
+							</div>
+
+							<div class="form-group">
+								<label for="inputPassword" class="col-sm-2 control-label">Service
+									Content</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control1" name="servicescontent"
+										id="servicescontent"
+										placeholder="<?php echo $rows['servicescontent']; ?>"> <input
+										type="hidden" name="id" value="<?php echo $id?>"> <input
+										type="hidden" name="table" value="<?php echo $table?>">
+								</div>
+							</div>
+
+							<div class="form-group">
+
+
+								<br> <br>
+								<div class="col-sm-8 col-sm-offset-">
+									<span><a href="javascript:void(0);" class="add">Add More</a></span><br>
+									<input class="btn-success btn" class="files" name="file[]"
+										type="file" multiple="multiple"><br>
+
 
 								</div>
 
-								<div class="form-group">
-									<label for="focusedinput" class="col-sm-2 control-label">Title
-										Content</label>
-									<div class="col-sm-8">
-										<input type="text" class="form-control1" name="titlecontent"
-											id="titlecontent"
-											placeholder="<?php echo $rows['titlecontent']; ?>">
-									</div>
 
+								<div class="contents"></div>
+								<br> <br>
+								<div class="col-sm-8 col-sm-offset-">
+									<input class="btn-success btn" type="submit" class="submit"
+										value="submit" name="submit" /> <input class="btn-success btn"
+										type="Reset" class="reset" name="reset" />
 								</div>
 
-								<div class="form-group">
-									<label for="focusedinput" class="col-sm-2 control-label">Services</label>
-									<div class="col-sm-8">
-										<input type="text" class="form-control1" name="services"
-											id="services" placeholder="<?php echo $rows['services']; ?>">
-									</div>
-
-								</div>
-
-								<div class="form-group">
-									<label for="inputPassword" class="col-sm-2 control-label">Service
-										Content</label>
-									<div class="col-sm-8">
-										<input type="text" class="form-control1"
-											name="servicescontent" id="servicescontent"
-											placeholder="<?php echo $rows['servicescontent']; ?>"> <input
-											type="hidden" name="id" value="<?php echo $id?>"> <input
-											type="hidden" name="table" value="<?php echo $table?>">
-									</div>
-								</div>
-
-								<div class="form-group">
-
-									<center>
-										<br>
-										<br>
-										<div class="col-sm-8 col-sm-offset-">
-											<span><a href="javascript:void(0);" class="add">Add More</a></span><br>
-											<input class="btn-success btn" class="files" name="file[]"
-												type="file" multiple="multiple"><br>
-
-
-										</div>
-
-
-										<div class="contents"></div>
-										<br> <br>
-										<div class="col-sm-8 col-sm-offset-">
-											<input class="btn-success btn" type="submit" class="submit"
-												value="submit" name="submit" /> <input
-												class="btn-success btn" type="Reset" class="reset"
-												name="reset" />
-										</div>
-
-								</div>
-								</center>
+							</div>
 
 
 
-								<br>
-								<br>
-								<div class="panel-footer"></div>
-							</form>
-						</div>
-					</div>
-					<div class="copy_layout">
-						<p>
-							Copyright © 2016 SAKTHI BUILDERS. All Rights Reserved | Design
-							by <a href="http://pepiras.com/" target="_blank">Pepiras</a>
-						</p>
+
+							<br> <br>
+							<div class="panel-footer"></div>
+						</form>
 					</div>
 				</div>
+				<div class="copy_layout">
+					<p>
+						Copyright © 2016 SAKTHI BUILDERS. All Rights Reserved | Design by
+						<a href="http://pepiras.com/" target="_blank">Pepiras</a>
+					</p>
+				</div>
 			</div>
-			<!-- /#page-wrapper -->
 		</div>
+		<!-- /#page-wrapper -->
+	</div>
 
 
 
@@ -303,11 +301,11 @@ in_array ( $file_extension, $validextensions )) {
 
 
     <!-- /#wrapper -->
-		<!-- Nav CSS -->
-		<link href="includes/css/custom.css" rel="stylesheet">
-		<!-- Metis Menu Plugin JavaScript -->
-		<script src="includes/js/metisMenu.min.js"></script>
-		<script src="includes/js/custom.js"></script>
+	<!-- Nav CSS -->
+
+	<!-- Metis Menu Plugin JavaScript -->
+	<script src="includes/js/metisMenu.min.js"></script>
+	<script src="includes/js/custom.js"></script>
 
 </body>
 </html>
