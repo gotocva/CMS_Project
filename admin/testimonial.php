@@ -1,45 +1,48 @@
 <?php
-ob_start();
-session_start();
-//include 'includes/dbconfig.php';
+ob_start ();
+session_start ();
+// include 'includes/dbconfig.php';
 
 // it will never let you open index(login) page if session is set
-//ob_start();
-//session_start();
- if ( isset($_SESSION['user'])=="" ) {
-  header("Location: index.php");
-  exit;
- }
- ?>
+// ob_start();
+// session_start();
+if (isset ( $_SESSION ['user'] ) == "") {
+	header ( "Location: index.php" );
+	exit ();
+}
+?>
 <?php
-        require('includes/dbconfig.php');
 
+require ('includes/dbconfig.php');
 
+$sql = mysqli_query ( $conn, "SELECT * FROM testimonial ORDER BY id ASC" );
 
-        $sql = mysqli_query($conn,"SELECT * FROM testimonial ORDER BY id ASC");
-
-
-        //while loop removed from here
-        ?>
+// while loop removed from here
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
 <title>ADMIN</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Modern Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+<meta name="keywords"
+	content="Modern Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
- <!-- Bootstrap Core CSS -->
-<link href="includes/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+<!-- Bootstrap Core CSS -->
+<link href="includes/css/bootstrap.min.css" rel='stylesheet'
+	type='text/css' />
 <!-- Custom CSS -->
 <link href="includes/css/style.css" rel='stylesheet' type='text/css' />
+<link href="includes/css/custom.css" rel="stylesheet">
 <link href="includes/css/font-awesome.css" rel="stylesheet">
 <!-- jQuery -->
 <script src="includes/js/jquery.min.js"></script>
 <!----webfonts--->
-<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+<link
+	href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900'
+	rel='stylesheet' type='text/css'>
 <!---//webfonts--->
 <!-- Bootstrap Core JavaScript -->
 <script src="includes/js/bootstrap.min.js"></script>
@@ -64,170 +67,187 @@ function show_alert() {
 </script>
 </head>
 <body>
-<div id="wrapper">
-     <!-- Navigation -->
-     <nav class="top1 navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-         <div class="navbar-header">
-             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                 <span class="sr-only">Toggle navigation</span>
-                 <span class="icon-bar"></span>
-                 <span class="icon-bar"></span>
-                 <span class="icon-bar"></span>
-             </button>
-             <a class="navbar-brand" href="home.php">ADMIN</a>
-         </div>
-         <!-- /.navbarfg-header -->
-         <ul class="nav navbar-nav navbar-right">
-         <li class="m_2"><a href="change_password.php"> Change Password</a></li>
-         <li class="m_2"><a href="logout.php"> Logout</a></li>
-         </ul>
+	<div id="wrapper">
+		<!-- Navigation -->
+		<nav class="top1 navbar navbar-default navbar-static-top"
+			role="navigation" style="margin-bottom: 0">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="home.php">ADMIN</a>
+			</div>
+			<!-- /.navbarfg-header -->
+			<ul class="nav navbar-nav navbar-right">
+				<li class="m_2"><a href="change_password.php"> Change Password</a></li>
+				<li class="m_2"><a href="logout.php"> Logout</a></li>
+			</ul>
 
-         <div class="navbar-default sidebar" role="navigation">
-             <div class="sidebar-nav navbar-collapse">
+			<div class="navbar-default sidebar" role="navigation">
+				<div class="sidebar-nav navbar-collapse">
 
-               <ul class="nav" id="side-menu">
-                   <li>  <a href="home.php"><i class="fa fa-indent nav_icon"></i>Dashboard</a>  </li>
-                   <li>  <a href="#"><i class="fa fa-indent nav_icon"></i>Projects</a>
-                       <ul class="nav nav-second-level">
-                           <li> <a href="projects.php">Add Projects</a> </li>
-                           <li> <a href="interior_view.php">View Interior Projects</a> </li>
-                           <li> <a href="exterior_view.php">View Exterior Projects</a> </li>
-                           <li> <a href="remodeling_view.php">View Remodeling Project</a> </li>
-                       </ul>
-                   </li>
-                   <li> <a href="testimonial.php"><i class="fa fa-indent nav_icon"></i>Testimonial</span></a>   </li>
-                   <li> <a href="change_password.php"><i class="fa fa-indent nav_icon"></i>Change Password</a>  </li>
-                 </ul>
+					<ul class="nav" id="side-menu">
+						<li><a href="home.php"><i class="fa fa-indent nav_icon"></i>Dashboard</a>
+						</li>
+						<li><a href="#"><i class="fa fa-indent nav_icon"></i>Projects</a>
+							<ul class="nav nav-second-level">
+								<li><a href="projects.php">Add Projects</a></li>
+								<li><a href="interior_view.php">View Interior Projects</a></li>
+								<li><a href="exterior_view.php">View Exterior Projects</a></li>
+								<li><a href="remodeling_view.php">View Remodeling Project</a></li>
+							</ul></li>
+						<li><a href="testimonial.php"><i class="fa fa-indent nav_icon"></i>Testimonial</a>
+						</li>
+						<li><a href="change_password.php"><i class="fa fa-indent nav_icon"></i>Change
+								Password</a></li>
+					</ul>
 
-             </div>
-             <!-- /.sidebar-collapse -->
-         </div>
-         <!-- /.navbar-static-side -->
-     </nav>
-
-  <!-- added by me for add testimonial -->
-
-
-  <div id="page-wrapper">
-  <div class="graphs">
- <div class="xs">
-    <center> <h3>Add Testimonial </h3></center>
-       <div class="tab-content">
-      <div class="tab-pane active" id="horizontal-form">
-        <form class="form-horizontal" name="frm" action="" method="post">
-          <div class="form-group">
-            <label for="focusedinput" class="col-sm-2 control-label">Author</label>
-            <div class="col-sm-8">
-              <input type="text" class="form-control1" name="author" id="author" placeholder="Author Name" required>
-            </div>
-
-          </div>
-
-          <div class="form-group">
-            <label for="inputPassword" class="col-sm-2 control-label">Testimonial</label>
-            <div class="col-sm-8">
-              <input type="text" class="form-control1" name="content" id="content" placeholder="Testimonial Content" required>
-            </div>
-          </div>
+				</div>
+				<!-- /.sidebar-collapse -->
+			</div>
+			<!-- /.navbar-static-side -->
+		</nav>
+	</div>
+	<!-- added by me for add testimonial -->
 
 
-<div class="row">
-<div class="col-sm-8 col-sm-offset-2">
-  <button type="submit" onclick="show_alert();" name="submit" class="btn-success btn">Submit</button>
-  <button type="reset" class="btn-default btn">Reset</button>
+	<div id="page-wrapper">
+		<div class="graphs">
+			<div class="xs">
 
-</div>
-</div>
+				<h3>Add Testimonial</h3>
+
+				<div class="tab-content">
+					<div class="tab-pane active" id="horizontal-form">
+						<form class="form-horizontal" name="frm" action="" method="post">
+							<div class="form-group">
+								<label for="focusedinput" class="col-sm-2 control-label">Author</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control1" name="author"
+										id="author" placeholder="Author Name" required>
+								</div>
+
+							</div>
+
+							<div class="form-group">
+								<label for="inputPassword" class="col-sm-2 control-label">Testimonial</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control1" name="content"
+										id="content" placeholder="Testimonial Content" required>
+								</div>
+							</div>
 
 
-<br>
-<center><h3>Display Testimonials </h3></center>
-<!-- /.table-responsive -->
-<div class="table-responsive">
- <table class="table table-bordered">
-   <thead>
-     <tr>
+							<div class="row">
+								<div class="col-sm-8 col-sm-offset-2">
+									<button type="submit" onclick="show_alert();" name="submit"
+										class="btn-success btn">Submit</button>
+									<button type="reset" class="btn-default btn">Reset</button>
 
-       <th>ID</th>
-       <th>AUTHOR</th>
-       <th>TESTIMONIAL</th>
-       <th>EDIT</th>
-       <th>DELETE</th>
+								</div>
+							</div>
 
-     </tr>
-   </thead>
-   <tbody>
+
+							<br>
+
+							<h3>Display Testimonials</h3>
+
+							<!-- /.table-responsive -->
+							<div class="table-responsive">
+								<table class="table table-bordered">
+									<thead>
+										<tr>
+
+											<th>ID</th>
+											<th>AUTHOR</th>
+											<th>TESTIMONIAL</th>
+											<th>EDIT</th>
+											<th>DELETE</th>
+
+										</tr>
+									</thead>
+									<tbody>
 
      <?php
-         $ab = 1;  while ($rows = mysqli_fetch_assoc($sql)) {
-               ?>
+					$ab = 1;
+					while ( $rows = mysqli_fetch_assoc ( $sql ) ) {
+						?>
      <tr>
 
-       <td><?php echo $ab; ?></td>
-                   <td><?php echo $rows['author']; ?></td>
-                   <td><?php echo $rows['content']; ?></td>
-                   <?php  $eurl = "edit_projects.php";
-                   $eurl1 = $eurl."?id=".$rows['id']."&table=testimonial";
-                  ?>
+											<td><?php echo $ab; ?></td>
+											<td><?php echo $rows['author']; ?></td>
+											<td><?php echo $rows['content']; ?></td>
+                   <?php
+
+						$eurl = "edit_projects.php";
+						$eurl1 = $eurl . "?id=" . $rows ['id'] . "&table=testimonial";
+						?>
 
 <td><?php echo '<a href="'.$eurl1.'" class="btn btn-sm btn-danger">Edit</a>'; ?></td>
-                   <?php  $url = "delete.php";
-                               $url1 = $url."?id=".$rows['id']."&table=testimonial";
-                              ?>
+                   <?php
+
+						$url = "delete.php";
+						$url1 = $url . "?id=" . $rows ['id'] . "&table=testimonial";
+						?>
 
        <td><?php echo '<a href="'.$url1.'" class="btn btn-sm btn-danger">Delete</a>'; ?></td>
 
 
-     </tr>
+										</tr>
      <?php
-         $ab = $ab + 1;  }
-           ?>
+						$ab = $ab + 1;
+					}
+					?>
    </tbody>
- </table>
-</div><!-- /.table-resbvponsive -->
+								</table>
+							</div>
+							<!-- /.table-resbvponsive -->
 
 
 
 
 
-<br><br>
-<div class="panel-footer">
-</div>
-</form>
-</div>
-</div>
-<div class="copy_layout">
-<p>Copyright © 2016 SAKTHI BUILDERS. All Rights Reserved | Design by <a href="http://pepiras.com/" target="_blank">Pepiras</a> </p>
-</div>
-</div>
-</div>
-<!-- /#page-wrapper -->
-</div>
+							<br> <br>
+							<div class="panel-footer"></div>
+						</form>
+					</div>
+				</div>
+				<div class="copy_layout">
+					<p>
+						Copyright © 2016 SAKTHI BUILDERS. All Rights Reserved | Design by
+						<a href="http://pepiras.com/" target="_blank">Pepiras</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<!-- /#page-wrapper -->
+	</div>
 <?php
-if (isset($_POST['submit'])) {
-  $author = $_POST['author'];
-  $content = $_POST['content'];
-  $sql = "INSERT into testimonial (author, content) values ('$author','$content')";
-  $quw = mysqli_query($conn,$sql);
-  if($quw)
-  {
-    header('Refresh: 0; URL = testimonial.php');
-  }
-  else {
-    echo "<h1>Not Added Successfully</h1>";
-  }
+if (isset ( $_POST ['submit'] )) {
+	$author = $_POST ['author'];
+	$content = $_POST ['content'];
+	$sql = "INSERT into testimonial (author, content) values ('$author','$content')";
+	$quw = mysqli_query ( $conn, $sql );
+	if ($quw) {
+		header ( 'Refresh: 0; URL = testimonial.php' );
+	} else {
+		echo "<h1>Not Added Successfully</h1>";
+	}
 }
- ?>
+?>
 
 
 
         <!-- added by me for add testimonial -->
 
-    <!-- /#wrapper -->
-<!-- Nav CSS -->
-<link href="includes/css/custom.css" rel="stylesheet">
-<!-- Metis Menu Plugin JavaScript -->
-<script src="includes/js/metisMenu.min.js"></script>
-<script src="includes/js/custom.js"></script>
+	<!-- /#wrapper -->
+	<!-- Nav CSS -->
+
+	<!-- Metis Menu Plugin JavaScript -->
+	<script src="includes/js/metisMenu.min.js"></script>
+	<script src="includes/js/custom.js"></script>
 </body>
 </html>
