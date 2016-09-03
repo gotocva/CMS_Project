@@ -34,6 +34,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	type='text/css' />
 <!-- Custom CSS -->
 <link href="includes/css/style.css" rel='stylesheet' type='text/css' />
+<link href="includes/css/custom.css" rel="stylesheet">
 <link href="includes/css/font-awesome.css" rel="stylesheet">
 <!-- jQuery -->
 <script src="includes/js/jquery.min.js"></script>
@@ -78,7 +79,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<li><a href="exterior_view.php">View Exterior Projects</a></li>
 								<li><a href="remodeling_view.php">View Remodeling Project</a></li>
 							</ul></li>
-						<li><a href="testimonial.php"><i class="fa fa-indent nav_icon"></i>Testimonial</span></a>
+						<li><a href="testimonial.php"><i class="fa fa-indent nav_icon"></i>Testimonial</a>
 						</li>
 						<li><a href="change_password.php"><i class="fa fa-indent nav_icon"></i>Change
 								Password</a></li>
@@ -89,123 +90,122 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<!-- /.navbar-static-side -->
 		</nav>
-
-		<!-- added by me for add testimonial -->
-
-
-
-		<div id="page-wrapper">
-			<div class="graphs">
-				<div class="xs">
-
-					<div class="tab-content">
-						<div class="tab-pane active" id="horizontal-form">
+	</div>
+	<!-- added by me for add testimonial -->
 
 
+
+	<div id="page-wrapper">
+		<div class="graphs">
+			<div class="xs">
+
+				<div class="tab-content">
+					<div class="tab-pane active" id="horizontal-form">
 
 
 
 
-							<br>
-							<center>
-								<h3>Display exterior</h3>
-							</center>
-							<!-- /.table-responsive -->
-							<div class="table-responsive">
-								<table class="table table-bordered">
-									<thead>
-										<tr>
 
-											<th>ID</th>
-											<th>IMAGE 1</th>
-											<th>IMAGE 2</th>
-											<th>IMAGE 3</th>
-											<th>IMAGE 4</th>
-											<th>Title</th>
-											<th>Title Content</th>
-											<th>Services</th>
-											<th>Services Content</th>
-											<th>EDIT</th>
-											<th>DELETE</th>
 
-										</tr>
-									</thead>
-									<tbody>
+						<br>
+
+						<h3>Display exterior</h3>
+
+						<!-- /.table-responsive -->
+						<div class="table-responsive">
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+
+										<th>ID</th>
+										<th>IMAGE 1</th>
+										<th>IMAGE 2</th>
+										<th>IMAGE 3</th>
+										<th>IMAGE 4</th>
+										<th>Title</th>
+										<th>Title Content</th>
+										<th>Services</th>
+										<th>Services Content</th>
+										<th>EDIT</th>
+										<th>DELETE</th>
+
+									</tr>
+								</thead>
+								<tbody>
 
      <?php
 					while ( $rows = mysqli_fetch_assoc ( $sql ) ) {
 						?>
      <tr>
 
-											<td><?php echo $rows['id']; ?></td>
-											<td><img height="100" width="100"
-												src="<?php echo $rows['img1']; ?>" /></td>
-											<td><img height="100" width="100"
-												src="<?php echo $rows['img2']; ?>" /></td>
-											<td><img height="100" width="100"
-												src="<?php echo $rows['img3']; ?>" /></td>
-											<td><img height="100" width="100"
-												src="<?php echo $rows['img4']; ?>" /></td>
-											<td><?php echo $rows['title']; ?></td>
-											<td><?php echo $rows['titlecontent']; ?></td>
-											<td><?php echo $rows['services']; ?></td>
-											<td><?php echo $rows['servicescontent']; ?></td>
+										<td><?php echo $rows['id']; ?></td>
+										<td><img height="100" width="100"
+											src="<?php echo $rows['img1']; ?>" /></td>
+										<td><img height="100" width="100"
+											src="<?php echo $rows['img2']; ?>" /></td>
+										<td><img height="100" width="100"
+											src="<?php echo $rows['img3']; ?>" /></td>
+										<td><img height="100" width="100"
+											src="<?php echo $rows['img4']; ?>" /></td>
+										<td><?php echo $rows['title']; ?></td>
+										<td><?php echo $rows['titlecontent']; ?></td>
+										<td><?php echo $rows['services']; ?></td>
+										<td><?php echo $rows['servicescontent']; ?></td>
                    <?php
 
-$eurl = "edit_projects.php";
+						$eurl = "edit_projects.php";
 						$eurl1 = $eurl . "?id=" . $rows ['id'] . "&table=exterior";
 						?>
 
 <td><?php echo '<a href="'.$eurl1.'" class="btn btn-sm btn-danger">Edit</a>'; ?></td>
                    <?php
 
-$url = "delete.php";
+						$url = "delete.php";
 						$url1 = $url . "?id=" . $rows ['id'] . "&table=exterior";
 						?>
 
        <td><?php echo '<a href="'.$url1.'" class="btn btn-sm btn-danger">Delete</a>'; ?></td>
 
 
-										</tr>
+									</tr>
      <?php
 					}
 					?>
    </tbody>
-								</table>
-							</div>
-							<!-- /.table-responsive -->
-
-
-
-
-
-							<br>
-							<br>
-							<div class="panel-footer"></div>
-							</form>
+							</table>
 						</div>
-					</div>
-					<div class="copy_layout">
-						<p>
-							Copyright © 2016 SAKTHI BUILDERS. All Rights Reserved | Design
-							by <a href="http://pepiras.com/" target="_blank">Pepiras</a>
-						</p>
+						<!-- /.table-responsive -->
+
+
+
+
+
+						<br> <br>
+						<div class="panel-footer"></div>
+
 					</div>
 				</div>
+				<div class="copy_layout">
+					<p>
+						Copyright © 2016 SAKTHI BUILDERS. All Rights Reserved | Design by
+						<a href="http://pepiras.com/" target="_blank">Pepiras</a>
+					</p>
+				</div>
 			</div>
-			<!-- /#page-wrapper -->
 		</div>
+		<!-- /#page-wrapper -->
+	</div>
 
 
 
-		<!-- added by me for add testimonial -->
+	<!-- added by me for add testimonial -->
 
-		<!-- /#wrapper -->
-		<!-- Nav CSS -->
-		<link href="includes/css/custom.css" rel="stylesheet">
-		<!-- Metis Menu Plugin JavaScript -->
-		<script src="includes/js/metisMenu.min.js"></script>
-		<script src="includes/js/custom.js"></script>
+	<!-- /#wrapper -->
+	<!-- Nav CSS -->
+
+	<!-- Metis Menu Plugin JavaScript -->
+	<script src="includes/js/metisMenu.min.js"></script>
+	<script src="includes/js/custom.js"></script>
 
 </body>
 </html>
