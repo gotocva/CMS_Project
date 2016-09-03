@@ -14,7 +14,7 @@ session_start();
 <!DOCTYPE HTML>
 <html>
 <head>
-<titleADMIN</title>
+<title>ADMIN</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Modern Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
@@ -64,7 +64,7 @@ $(document).ready(function() {
          <li class="m_2"><a href="logout.php"> Logout</a></li>
          </ul>
 
-         
+
          <div class="navbar-default sidebar" role="navigation">
              <div class="sidebar-nav navbar-collapse">
 

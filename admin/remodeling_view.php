@@ -131,10 +131,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
      <tr>
 
        <td><?php echo $rows['id']; ?></td>
-       <td><img height="100" width="100" src="<?php echo $rows['img1']; ?>"</td>
-       <td><img height="100" width="100" src="<?php echo $rows['img2']; ?>"</td>
-       <td><img height="100" width="100" src="<?php echo $rows['img3']; ?>"</td>
-       <td><img height="100" width="100" src="<?php echo $rows['img4']; ?>"</td>
+       <td><img height="100" width="100" src="<?php echo $rows['img1']; ?>"/></td>
+       <td><img height="100" width="100" src="<?php echo $rows['img2']; ?>"/></td>
+       <td><img height="100" width="100" src="<?php echo $rows['img3']; ?>"/></td>
+       <td><img height="100" width="100" src="<?php echo $rows['img4']; ?>"/></td>
                    <td><?php echo $rows['title']; ?></td>
                    <td><?php echo $rows['titlecontent']; ?></td>
                    <td><?php echo $rows['services']; ?></td>
